@@ -1,0 +1,24 @@
+import requests
+import random
+
+# Replace with your Discord webhook URL
+WEBHOOK_URL = "https://discord.com/api/webhooks/1347952013844942848/ugUvp-jUiGSOj8n4Zs5e3XguIvC6gSad7jfz-9ncUJiRN43YWgoserTfWzMzKUrSgzp7"
+
+# List of random messages
+messages = [
+    "Hello from Python!",
+    "Webhook test message.",
+    "Random message incoming!",
+    "This is a test notification.",
+    "Surprise! It's a webhook.",
+    "Python was here. 🐍"
+]
+
+# Pick a random message
+message = random.choice(messages)
+
+# Send the message to the webhook
+payload = {"content": message}
+requests.post(WEBHOOK_URL, json=payload)
+
+print("Message sent!")
